@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script defer src="/Public/game.js"></script>
+
+    <link rel="stylesheet" href="/Public/main.css" />
+
+    <title>Adivina El Numero</title>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <header><h1>Shooting Game</h1></header>
+    <main>
+      <menu>
+        <h2>Como jugar</h2>
+        <p>
+          El juego comienza generando un número entre el 1 y el 100. El jugador
+          tiene 8 intentos para adivinar este número. Una vez que el número sea
+          adivinado, se añadirán 4 intentos adicionales para intentar adivinar
+          el número de la siguiente ronda. Los puntos obtenidos corresponden a
+          los intentos restantes al momento de adivinar. Al quedarse sin
+          intentos, se termina el juego.
+        </p>
+      </menu>
+      <article>
+        <div id="game-window">
+          <form id="guess-form" action="submit">
+            <label for="guess">Adivina el número</label>
+            <input
+              name="guess"
+              type="number"
+              min="1"
+              max="100"
+              step="1"
+              id="number"
+            />
+            <button id="guess-btn">Adivinar</button>
+          </form>
+          <h3 id="info" class="blink">Fuera de la diana</h3>
+          <div id="graph">
+            <div id="target-group">
+              <img id="target" class="clear" src="Public/Sprites/target.png" />
+              <!-- <img class="mark" src="Public/Sprites/mark.png" /> -->
+            </div>
+            <div id="gun-group">
+              <img id="gun" class="shoot" src="Public/Sprites/gun.png" />
+              <img id="bullets" src="Public/Sprites/bullets8.png" />
+            </div>
+          </div>
+          <h2 id="round">Ronda 1 - Puntos: 0</h2>
+        </div>
+      </article>
+      <aside>
+        <h2>Puntuación</h2>
+        <ol id="scoreboard"></ol>
+      </aside>
+    </main>
+    <div id="alert" class="invisible">
+      <img id="result-image" src="Public/Sprites/trophy.png" />
+      <h2 id="result">¡Entraste al podio!</h2>
+      <h3 id="result-subtitle">Puntuación final - 0</h3>
+      <form id="name-form" action="submit">
+        <label id="name-label" for="name"
+          >Escribe tu nombre (3 caracteres)</label
+        >
+        <input
+          name="name"
+          type="text"
+          maxlength="3"
+          pattern="[A-Za-z]*"
+          id="name"
+        />
+        <button id="name-btn">Enviar</button>
+      </form>
+    </div>
+    <footer>Todos los derechos reservados</footer>
+  </body>
+</html>
